@@ -57,11 +57,18 @@ class studentModel {
         $sql = $conn->prepare('INSERT INTO nametable (student_name) VALUES ((?))');
         $sql->bind_param('s', $name);
         $sql->execute();
-        $this->db->close_connection();
-        return json_encode(([
+        
+ 
+
+        $response =  json_encode(([
             "message"=>"Student added",
             "id"=>$conn->insert_id
         ]));
+
+        $this->db->close_connection();
+
+        return $response;
+
         
     }
 
