@@ -4,6 +4,15 @@ require_once 'Controllers/studentController.php';
 require_once 'Controllers/coursesController.php';
 require_once 'Controllers/finalController.php';
 
+// Allow any site to make requests to this API
+header('Access-Control-Allow-Origin: *');
+
+// Allow methods for CORS
+header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+
+// Allow headers for CORS
+header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
+
 header("Content-type: application/json; charset=UTF-8");
 
 $url = explode("/", $_SERVER["REQUEST_URI"]); 
