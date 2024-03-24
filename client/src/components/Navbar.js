@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Logout from './logout';
 
 function NavigationBar() {
   return (
@@ -6,7 +7,6 @@ function NavigationBar() {
       <Link to="/search">Search</Link> | 
       <Link to="/update">Update</Link> | 
       <Link to="/delete">Delete</Link> |
-      <Link to="/" onClick={handleLogout}>Logout</Link>
     </nav>
   );
 }
