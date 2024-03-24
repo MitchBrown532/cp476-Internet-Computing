@@ -1,5 +1,4 @@
 <?php
-header('Access-Control-Allow-Origin: *');
 require_once 'Models/finalModel.php';
 class finalController{
 

@@ -9,7 +9,7 @@ function Search() {
         event.preventDefault(); // Prevent the form from refreshing the page
         try {
             // Update the fetch URL
-            const response = await fetch(`http://localhost/server/controllers/coursesController.php?query=${query}`, {
+            const response = await fetch(`http://localhost/cp476-Internet-Computing/server/index.php/students`, {
                 method: 'GET', // Since we're appending the query in the URL
                 headers: {
                     'Accept': 'application/json', // Expecting JSON response
@@ -18,6 +18,7 @@ function Search() {
             if (!response.ok) throw new Error('Network response was not ok');
             const data = await response.json();
             setResults(data);
+            console.log(data);
         } catch (error) {
             console.error('There was a problem with your fetch operation:', error);
         }
@@ -30,8 +31,8 @@ function Search() {
                 <input
                     type="text"
                     placeholder="Enter student name or ID"
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
+                    //value={query}
+                    //onChange={(e) => setQuery(e.target.value)}
                 />
                 <button type="submit">Search</button>
             </form>
