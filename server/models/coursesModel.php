@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once 'Database/dbConnector.php';
 class coursesModel {
     public $db;

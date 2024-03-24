@@ -8,12 +8,11 @@ function Search() {
     const handleSearch = async (event) => {
         event.preventDefault(); // Prevent the form from refreshing the page
         try {
-            // Assuming your backend endpoint for searching students is `/api/search`
-            const response = await fetch(`http://localhost/api/search.php?query=${query}`, {
-                method: 'GET', // Or 'POST', depending on your backend setup
+            // Update the fetch URL
+            const response = await fetch(`http://localhost/server/controllers/coursesController.php?query=${query}`, {
+                method: 'GET', // Since we're appending the query in the URL
                 headers: {
-                    'Content-Type': 'application/json',
-                    // Any other headers your backend requires
+                    'Accept': 'application/json', // Expecting JSON response
                 },
             });
             if (!response.ok) throw new Error('Network response was not ok');
@@ -50,7 +49,10 @@ function Search() {
                             <tr key={student.id}>
                                 <td>{student.id}</td>
                                 <td>{student.name}</td>
-                                <td>{/* Link or button to view more details */}</td>
+                                <td>
+                                    {/* Link or button to view more details */}
+                                    {/* Example: <a href={`/details/${student.id}`}>View Details</a> */}
+                                </td>
                             </tr>
                         ))}
                     </tbody>
