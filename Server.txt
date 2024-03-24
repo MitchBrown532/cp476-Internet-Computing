@@ -1,0 +1,82 @@
+STUDENTS CONTROLLER
+
+1. Retrieve All students
+REQUEST: GET
+URL: http://localhost/cp476-Internet-Computing/server/index.php/students
+
+2. Get student by id
+REQUEST: GET
+URL: http://localhost/cp476-Internet-Computing/server/index.php/students/<student_id>
+
+3. Add Student
+REQUEST: POST
+URL: http://localhost/cp476-Internet-Computing/server/index.php/students/add
+BODY: 
+{
+  "name": <STRING>
+}
+
+4.  Delete Student
+REQUEST: POST
+URL: http://localhost/cp476-Internet-Computing/server/index.php/students/delete
+BODY:
+{
+  "id":<INT>
+}
+
+
+COURSE CONTROLLER
+
+1. Retrieve All courses
+REQUEST: GET
+URL: http://localhost/cp476-Internet-Computing/server/index.php/courses
+
+2. Retrieve courses by student id
+REQUEST: GET
+URL: http://localhost/cp476-Internet-Computing/server/index.php/courses/<student_id>
+
+3. Add course to student
+REQUEST: POST
+URL: http://localhost/cp476-Internet-Computing/server/index.php/courses/add
+BODY: 
+{
+    "id":<INT>,
+    "course_code": <STRING>
+}
+
+4. Delete course from student 
+REQUEST: POST
+URL: http://localhost/cp476-Internet-Computing/server/index.php/courses/delete
+BODY: 
+{
+    "id":<INT>,
+    "course_code": <STRING>
+}
+
+5. Update course by student
+REQUEST: POST
+URL: http://localhost/cp476-Internet-Computing/server/index.php/courses/update
+BODY:
+{
+  "id": <INT>,
+  "course_code": <STRING>,
+  "test1": <INT>, -> OPTIONAL PARAMTER
+  "test2": <INT>, -> OPTIONAL PARAMTER
+  "test3": <INT>, -> OPTIONAL PARAMTER
+  "FinalExam": <INT> -> OPTIONAL PARAMTER
+}
+
+FINAL MARKS CONTROLLER
+
+1. Get All final marks
+REQUEST: GET
+URL: http://localhost/cp476-Internet-Computing/server/index.php/finalmarks
+
+2. Get final marks by student id
+REQUEST: GET
+URL: http://localhost/cp476-Internet-Computing/server/index.php/finalmarks/<student_id>
+
+3. Calculate final marks
+REQUEST: POST
+URL: http://localhost/cp476-Internet-Computing/server/index.php/finalmarks/calculate
+BODY: NOT REQUIRED

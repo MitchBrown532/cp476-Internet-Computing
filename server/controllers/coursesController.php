@@ -21,6 +21,7 @@
                             exit;
                         case "update":
                             $this->updateCourse();
+
                     }
             }
         }
