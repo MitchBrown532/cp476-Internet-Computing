@@ -1,0 +1,5 @@
+Client ID:
+966725211415-8b81k79dqkb7rlskcf7i2hrpb0v4vdkj.apps.googleusercontent.com
+
+Client Secret:
+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
