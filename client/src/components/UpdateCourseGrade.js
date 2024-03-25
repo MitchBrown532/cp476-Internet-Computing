@@ -33,6 +33,18 @@ const UpdateCourseGrade = () => {
     } catch (error) {
       setMessage('Network error. Please try again.');
     }
+
+    try {
+      const response = await fetch('http://localhost/cp476-Internet-Computing/server/index.php/finalmarks/calculate', requestOptions);
+      if (response.ok) {
+        setMessage('Final grades successfully calculated!');
+      } else {
+        setMessage('Failed to update course grade. Please try again.');
+      }
+    } catch (error) {
+      setMessage('Network error. Please try again.');
+    }
+    
   };
 
   return (
