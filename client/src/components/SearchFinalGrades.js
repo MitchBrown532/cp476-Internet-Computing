@@ -21,7 +21,7 @@ const SearchFinalGrades = () => {
     }
     
     try {
-      const response = await fetch('http://localhost/cp476-Internet-Computing/server/index.php/finalmarks/calculate', requestOptions);
+      const response = await fetch('http://localhost/cp476-Internet-Computing/server/index.php/finalmarks/calculate');
       if (response.ok) {
         console.log('Final grades successfully calculated!');
       } else {
