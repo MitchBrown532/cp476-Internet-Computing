@@ -55,7 +55,7 @@ const SearchFinalGrades = () => {
       </div>
       <ul>
         {finalGrades.map((grade, index) => (
-          <li key={index}>{`${grade.student_name} (${grade.student_id}) - ${grade.course_code}: Final Grade - ${grade.final_grade}`}</li>
+          <li key={index}>{`${grade.student_name} (${grade.student_id}) - ${grade.course_code}: Final Grade - ${grade.final_mark}`}</li>
         ))}
       </ul>
     </div>
