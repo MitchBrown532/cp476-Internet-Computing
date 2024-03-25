@@ -4,6 +4,8 @@ import Login from "./components/Login";
 import Logout from "./components/Logout";
 import Home from "./components/Home";
 import SearchPage from './components/SearchPage';
+import UpdatePage from './components/UpdatePage';
+import DeletePage from './components/DeletePage';
 
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { gapi } from 'gapi-script';
@@ -31,8 +33,8 @@ function App() {
           <Route path="/" element={isAuthenticated ? <Navigate replace to="/home" /> : <Login setIsAuthenticated={setIsAuthenticated} />} />
           <Route path="/home" element={<Home />} />
           <Route path="/search" element={<SearchPage />} />
-          {/* <Route path="/update" element={<Update />} />
-          <Route path="/delete" element={<Delete />} /> */}
+          <Route path="/update" element={<UpdatePage />} />
+          <Route path="/delete" element={<DeletePage />} />
         </Routes>
       </div>
     </Router>
