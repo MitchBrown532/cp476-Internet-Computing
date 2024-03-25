@@ -29,13 +29,17 @@ const DeleteStudent = () => {
 
   return (
     <div>
-      <input
-        type="text"
-        value={studentId}
-        onChange={(e) => setStudentId(e.target.value)}
-        placeholder="Enter Student ID"
-      />
-      <button onClick={handleDelete}>Delete Student</button>
+      <div>
+        <input
+          type="text"
+          value={studentId}
+          onChange={(e) => setStudentId(e.target.value)}
+          placeholder="Enter Student ID"
+        />
+      </div>
+      <div>
+        <button onClick={handleDelete}>Delete Student</button>
+      </div>
       <p>{message}</p>
     </div>
   );

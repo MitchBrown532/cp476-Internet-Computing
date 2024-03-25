@@ -31,13 +31,17 @@ const SearchCourses = () => {
 
   return (
     <div>
+      <div>
       <input
         type="text"
         value={studentId}
         onChange={(e) => setStudentId(e.target.value)}
         placeholder="Enter Student ID (leave blank for all courses)"
       />
+      </div>
+      <div>
       <button onClick={handleSearch}>Search Courses</button>
+      </div>     
       <ul>
         {courses.map((course, index) => (
           <li key={index}>{`${course.course_code}: Grade - ${course.final_grade}`}</li>

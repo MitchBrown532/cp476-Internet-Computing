@@ -30,19 +30,25 @@ const DeleteCourse = () => {
 
   return (
     <div>
-      <input
-        type="text"
-        value={studentId}
-        onChange={(e) => setStudentId(e.target.value)}
-        placeholder="Student ID"
-      />
-      <input
-        type="text"
-        value={courseCode}
-        onChange={(e) => setCourseCode(e.target.value)}
-        placeholder="Course Code"
-      />
-      <button onClick={handleDelete}>Delete Course</button>
+      <div>
+        <input
+          type="text"
+          value={studentId}
+          onChange={(e) => setStudentId(e.target.value)}
+          placeholder="Student ID"
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          value={courseCode}
+          onChange={(e) => setCourseCode(e.target.value)}
+          placeholder="Course Code"
+        />
+      </div>
+      <div>
+        <button onClick={handleDelete}>Delete Course</button>
+      </div>
       <p>{message}</p>
     </div>
   );

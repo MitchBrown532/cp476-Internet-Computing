@@ -37,18 +37,23 @@ const UpdateCourseGrade = () => {
 
   return (
     <div>
+      <div>
       <input
         type="text"
         value={studentId}
         onChange={(e) => setStudentId(e.target.value)}
         placeholder="Student ID"
       />
+      </div>
+      <div>
       <input
         type="text"
         value={courseCode}
         onChange={(e) => setCourseCode(e.target.value)}
         placeholder="Course Code"
       />
+      </div>
+      <div>
       <input
         type="number"
         value={test1}
@@ -73,7 +78,10 @@ const UpdateCourseGrade = () => {
         onChange={(e) => setFinalExam(e.target.value)}
         placeholder="Final Exam Grade"
       />
+      </div>
+      <div>
       <button onClick={handleSubmit}>Update Grade</button>
+      </div>
       <p>{message}</p>
     </div>
   );

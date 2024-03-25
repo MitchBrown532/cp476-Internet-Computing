@@ -26,13 +26,17 @@ const AddStudent = () => {
 
   return (
     <div>
-      <input
-        type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder="Student Name"
-      />
-      <button onClick={handleSubmit}>Add Student</button>
+      <div>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Student Name"
+        />
+      </div>
+      <div>
+        <button onClick={handleSubmit}>Add Student</button>
+      </div>
       <p>{message}</p>
     </div>
   );

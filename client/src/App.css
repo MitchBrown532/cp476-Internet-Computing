@@ -1,20 +1,17 @@
 .App {
   text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  animation: App-logo-spin infinite 20s linear;
 }
 
 .App-header {
-  background-color: #282c34;
+  background: linear-gradient(to right, #0062E6, #33AEFF);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,10 +19,16 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 2rem;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #E2E2E2;
+  transition: color 0.3s ease-in-out;
+}
+
+.App-link:hover {
+  color: #ADE2FB;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +38,99 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/* Additional global styles for body, buttons, etc. */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+button {
+  border: black;
+  padding: 10px 20px;
+  margin: 0.3rem;
+  border-radius: 5px;
+  background-color: #2a7ae3;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-image: radial-gradient(circle at center, #a0bee5, #2a7ae3);  
+  border: black;
+  transform: scale(1.05); /* Slight increase in size on hover for feedback */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow size for depth effect */
+}
+
+button:active {
+  transform: scale(0.95); /* Slightly shrink the button when clicked */
+}
+
+form {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #a59999;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+  width: 60%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+select:focus {
+  border-color: #0062E6;
+  outline: none;
+}
+
+label {
+  margin-top: 10px;
+  display: block;
+  font-weight: bold;
+}
+
+.home-button {
+  background: none;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-image 0.3s, transform 0.3s;
+  margin: 0.5rem; /* Add margin for spacing */
+  text-decoration: none; /* Remove text decoration from the Link component if using React Router */
+}
+
+.home-button:hover {
+  background-image: radial-gradient(circle at center, #a0bee5, #2a7ae3);
+  transform: scale(1.05);
+}
+
+.home-button:active {
+  transform: scale(0.95);
 }

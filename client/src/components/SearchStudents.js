@@ -31,13 +31,17 @@ const SearchStudents = () => {
 
   return (
     <div>
-      <input
-        type="text"
-        value={searchId}
-        onChange={(e) => setSearchId(e.target.value)}
-        placeholder="Enter Student ID (leave blank to select all)"
-      />
-      <button onClick={handleSearch}>Search</button>
+      <div>
+        <input
+          type="text"
+          value={searchId}
+          onChange={(e) => setSearchId(e.target.value)}
+          placeholder="Enter Student ID (leave blank to select all)"
+        />
+      </div>
+      <div>
+        <button onClick={handleSearch}>Search</button>
+      </div>
       <ul>
         {students.map((student) => (
           <li key={student.id}>{student.name}</li>
