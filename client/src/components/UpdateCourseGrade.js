@@ -13,15 +13,30 @@ const UpdateCourseGrade = () => {
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
+      
+      body: {
         id: parseInt(studentId, 10),
         course_code: courseCode,
-        test1: parseInt(test1, 10), // Ensure these are parsed as numbers
-        test2: parseInt(test2, 10),
-        test3: parseInt(test3, 10),
-        FinalExam: parseInt(finalExam, 10)
-      })
+      
+      }
     };
+
+
+    if (test1){
+      requestOptions.body['test1'] = parseInt(test1, 10)
+    } if (test2){
+      requestOptions.body['test2'] = parseInt(test2, 10)
+    } if (test3){
+      requestOptions.body['test3'] = parseInt(test3, 10)
+    } if (finalExam){
+      requestOptions.body['FinalExam'] = parseInt(finalExam, 10)
+    } 
+
+    requestOptions.body = JSON.stringify(requestOptions.body)
+
+    console.log(requestOptions.body)
+
+  
 
     try {
       const response = await fetch('http://localhost/cp476-Internet-Computing/server/index.php/courses/update', requestOptions);
@@ -34,16 +49,16 @@ const UpdateCourseGrade = () => {
       setMessage('Network error. Please try again.');
     }
 
-    try {
-      const response = await fetch('http://localhost/cp476-Internet-Computing/server/index.php/finalmarks/calculate', requestOptions);
-      if (response.ok) {
-        setMessage('Final grades successfully calculated!');
-      } else {
-        setMessage('Failed to update course grade. Please try again.');
-      }
-    } catch (error) {
-      setMessage('Network error. Please try again.');
-    }
+    // try {
+    //   const response = await fetch('http://localhost/cp476-Internet-Computing/server/index.php/finalmarks/calculate', requestOptions);
+    //   if (response.ok) {
+    //     setMessage('Final grades successfully calculated!');
+    //   } else {
+    //     setMessage('Failed to update course grade. Please try again.');
+    //   }
+    // } catch (error) {
+    //   setMessage('Network error. Please try again.');
+    // }
     
   };
 

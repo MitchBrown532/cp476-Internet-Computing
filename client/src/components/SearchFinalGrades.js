@@ -5,23 +5,13 @@ const SearchFinalGrades = () => {
   const [studentId, setStudentId] = useState('');
 
   const fetchFinalGrades = async (id = '') => {
-    let url = 'http://localhost/cp476-Internet-Computing/server/index.php/finalmarks';
-    if (id) url += `/${id}`;
 
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' }
+    };
     try {
-      const response = await fetch(url);
-      if (response.ok) {
-        const data = await response.json();
-        setFinalGrades(data);
-      } else {
-        console.error('Failed to fetch final grades');
-      }
-    } catch (error) {
-      console.error('Error fetching final grades:', error);
-    }
-    
-    try {
-      const response = await fetch('http://localhost/cp476-Internet-Computing/server/index.php/finalmarks/calculate');
+      const response = await fetch('http://localhost/cp476-Internet-Computing/server/index.php/finalmarks/calculate', requestOptions);
       if (response.ok) {
         console.log('Final grades successfully calculated!');
       } else {
@@ -30,6 +20,27 @@ const SearchFinalGrades = () => {
     } catch (error) {
       console.log('Network error. Please try again.');
     }
+
+
+
+
+    let url = 'http://localhost/cp476-Internet-Computing/server/index.php/finalmarks';
+    if (id) url += `/${id}`;
+
+    try {
+      const response = await fetch(url);
+      if (response.ok) {
+        const data = await response.json();
+        console.log("data: ", data)
+        setFinalGrades(data);
+      } else {
+        console.error('Failed to fetch final grades');
+      }
+    } catch (error) {
+      console.error('Error fetching final grades:', error);
+    }
+    
+   
   };
 
   // useEffect(() => {

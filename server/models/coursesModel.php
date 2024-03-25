@@ -75,6 +75,8 @@ class coursesModel {
     }
 
     function addCourse($data){
+
+     
         $this->db->connect();
         $conn = $this->db->connection;
         if ($this->studentExsists($conn, $data['id'])) {
@@ -104,13 +106,18 @@ class coursesModel {
     }
 
     function updateCourse($data){
+
+        
+        $info = json_decode($this->getCourse($data['id']));
+
+        var_dump ($info[0]->Test1);
         $this->db->connect();
         $conn = $this->db->connection;
         $sql = $conn->prepare('UPDATE coursetable SET Test1=(?),Test2=(?),Test3=(?),FinalExam=(?) WHERE student_id = (?) AND course_code = (?)');
-        $test1 = $data['test1']??null;
-        $test2 = $data['test2']??null;
-        $test3 = $data['test3']??null;
-        $finalExam = $data['FinalExam']??null;
+        $test1 = $data['test1']??$info[0]->Test1;
+        $test2 = $data['test2']??$info[0]->Test2;
+        $test3 = $data['test3']??$info[0]->Test3;
+        $finalExam = $data['FinalExam']??$info[0]->FinalExam;
         $sql->bind_param('iiiiis', $test1,$test2,$test3,$finalExam,$data['id'],$data['course_code']);
         $sql->execute();
         
