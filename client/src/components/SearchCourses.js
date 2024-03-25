@@ -19,6 +19,7 @@ const SearchCourses = () => {
     } catch (error) {
       console.error('Error fetching courses:', error);
     }
+
   };
 
   // useEffect(() => {
@@ -44,7 +45,7 @@ const SearchCourses = () => {
       </div>     
       <ul>
         {courses.map((course, index) => (
-          <li key={index}>{`${course.course_code}: Grades - ${course.Test1, course.Test2, course.Test3, course.FinalExam}`}</li>
+          <li key={index}>{`${course.course_code}: Grades - ${course.Test1},${course.Test2},${course.Test3},${course.FinalExam}`}</li>
         ))}
       </ul>
     </div>

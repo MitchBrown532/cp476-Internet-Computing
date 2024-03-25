@@ -19,6 +19,17 @@ const SearchFinalGrades = () => {
     } catch (error) {
       console.error('Error fetching final grades:', error);
     }
+    
+    try {
+      const response = await fetch('http://localhost/cp476-Internet-Computing/server/index.php/finalmarks/calculate');
+      if (response.ok) {
+        console.log('Final grades successfully calculated!');
+      } else {
+        console.log('Failed to update course grade. Please try again.');
+      }
+    } catch (error) {
+      console.log('Network error. Please try again.');
+    }
   };
 
   // useEffect(() => {
@@ -44,7 +55,7 @@ const SearchFinalGrades = () => {
       </div>
       <ul>
         {finalGrades.map((grade, index) => (
-          <li key={index}>{`${grade.student_name} (${grade.student_id}) - ${grade.course_code}: Final Grade - ${grade.final_grade}`}</li>
+          <li key={index}>{`${grade.student_name} (${grade.student_id}) - ${grade.course_code}: Final Grade - ${grade.final_mark}`}</li>
         ))}
       </ul>
     </div>

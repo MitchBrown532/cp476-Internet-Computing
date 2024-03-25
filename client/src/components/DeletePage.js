@@ -10,7 +10,7 @@ function SearchPage() {
         <div>
             <div>
                 <Link to="/">
-                    <button className="home-button">Home</button>
+                <button className="home-button"><i className="fas fa-home" style={{ color: 'black' }}></i></button>
                 </Link>
             </div>
             <h2>Delete a Student:</h2>
