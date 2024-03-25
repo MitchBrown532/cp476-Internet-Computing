@@ -21,9 +21,9 @@ const SearchStudents = () => {
     }
   };
 
-  useEffect(() => {
-    fetchStudents();
-  }, []);
+  // useEffect(() => {
+  //   fetchStudents();
+  // }, []);
 
   const handleSearch = () => {
     fetchStudents(searchId);

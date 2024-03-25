@@ -21,9 +21,9 @@ const SearchFinalGrades = () => {
     }
   };
 
-  useEffect(() => {
-    fetchFinalGrades();
-  }, []);
+  // useEffect(() => {
+  //   fetchFinalGrades();
+  // }, []);
 
   const handleSearch = () => {
     fetchFinalGrades(studentId);

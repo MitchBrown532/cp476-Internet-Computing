@@ -21,9 +21,9 @@ const SearchCourses = () => {
     }
   };
 
-  useEffect(() => {
-    fetchCourses();
-  }, []);
+  // useEffect(() => {
+  //   fetchCourses();
+  // }, []);
 
   const handleSearch = () => {
     fetchCourses(studentId);
