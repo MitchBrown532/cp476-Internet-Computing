@@ -1,8 +1,9 @@
 import React from 'react';
-import Logout from './logout';
-import Search from './search';
-import Update from './update';
-import Delete_record from './delete';
+import Logout from './Logout';
+/* import Search from './Search';
+import Update from './Update';
+import Delete_record from './delete'; */
+//Fix imports - Add functionality to Navbar?
 import NavigationBar from './Navbar';
 
 
