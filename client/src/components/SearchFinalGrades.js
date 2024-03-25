@@ -19,11 +19,22 @@ const SearchFinalGrades = () => {
     } catch (error) {
       console.error('Error fetching final grades:', error);
     }
+    
+    try {
+      const response = await fetch('http://localhost/cp476-Internet-Computing/server/index.php/finalmarks/calculate', requestOptions);
+      if (response.ok) {
+        setMessage('Final grades successfully calculated!');
+      } else {
+        setMessage('Failed to update course grade. Please try again.');
+      }
+    } catch (error) {
+      setMessage('Network error. Please try again.');
+    }
   };
 
-  useEffect(() => {
-    fetchFinalGrades();
-  }, []);
+  // useEffect(() => {
+  //   fetchFinalGrades();
+  // }, []);
 
   const handleSearch = () => {
     fetchFinalGrades(studentId);
