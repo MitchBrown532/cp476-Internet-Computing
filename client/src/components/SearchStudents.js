@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-
+import { styles } from './styles';
 const SearchStudents = () => {
   const [students, setStudents] = useState([]);
   const [searchId, setSearchId] = useState('');
+
 
   const fetchStudents = async (id = '') => {
     let url = 'http://localhost/cp476-Internet-Computing/server/index.php/students';
@@ -29,6 +30,10 @@ const SearchStudents = () => {
     fetchStudents(searchId);
   };
 
+  const handleClear = () => {
+    setStudents([]);
+  };
+
   return (
     <div>
       <div>
@@ -41,10 +46,13 @@ const SearchStudents = () => {
       </div>
       <div>
         <button onClick={handleSearch}>Search</button>
+        <button onClick={handleClear}>Clear</button>
       </div>
-      <ul>
+
+        <ul style={styles.listStyle}>
+      
         {students.map((student) => (
-          <li key={student.id}>{student.name}</li>
+          <li key={student.id} style={styles.itemStyle}><span style={styles.nameStyle}>{student.name}</span></li>
         ))}
       </ul>
     </div>

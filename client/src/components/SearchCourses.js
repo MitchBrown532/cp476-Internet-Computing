@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { styles } from './styles';
 
 const SearchCourses = () => {
   const [courses, setCourses] = useState([]);
@@ -30,6 +31,10 @@ const SearchCourses = () => {
     fetchCourses(studentId);
   };
 
+  const handleClear = () => {
+    setCourses([]);
+  };
+
   return (
     <div>
       <div>
@@ -42,10 +47,11 @@ const SearchCourses = () => {
       </div>
       <div>
       <button onClick={handleSearch}>Search Courses</button>
+      <button onClick={handleClear}>Clear</button>
       </div>     
-      <ul>
+      <ul style={styles.listStyle}>
         {courses.map((course, index) => (
-          <li key={index}>{`${course.course_code}: Grades - ${course.Test1},${course.Test2},${course.Test3},${course.FinalExam}`}</li>
+          <li style={styles.itemStyle} key={index}><span style={styles.nameStyle}>{`Student: ${course.studentName} <> Course: ${course.course_code} <> Test 1: ${course.Test1}%, Test 2: ${course.Test2}%, Test 3: ${course.Test3}%, Final Exam: ${course.FinalExam}%`}</span></li>
         ))}
       </ul>
     </div>

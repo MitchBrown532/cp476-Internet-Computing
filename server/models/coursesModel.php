@@ -16,8 +16,21 @@ class coursesModel {
         if ($result->num_rows > 0) {
             
             while($row = $result->fetch_assoc()) {
+            $sqlTemp = $conn->prepare('SELECT * FROM nametable WHERE id=(?);');
+            $sqlTemp->bind_param('i', $row['student_id']);
+            $sqlTemp->execute();
+            $resultTemp=$sqlTemp->get_result();
+            $name = '';
+        
+            if ($resultTemp->num_rows > 0) {
+                    
+                while($rowTemp = $resultTemp->fetch_assoc()) {
+                   $name = $rowTemp['student_name'];
+                }
+            }
             array_push($response, [
                 'student_id' => $row['student_id'],
+                'studentName'=> $name,
                 'course_code' => $row['course_code'],
                 'Test1' => $row['Test1'],
                 'Test2' => $row['Test2'],
@@ -43,10 +56,24 @@ class coursesModel {
         $response = [];
 
         if ($result->num_rows > 0) {
-            
+
             while($row = $result->fetch_assoc()) {
+                $sqlTemp = $conn->prepare('SELECT * FROM nametable WHERE id=(?);');
+                $sqlTemp->bind_param('i', $row['student_id']);
+                $sqlTemp->execute();
+                $resultTemp=$sqlTemp->get_result();
+                $name = '';
+            
+                if ($resultTemp->num_rows > 0) {
+                        
+                    while($rowTemp = $resultTemp->fetch_assoc()) {
+                       $name = $rowTemp['student_name'];
+                    }
+                }   
+
             array_push($response, [
                 'student_id' => $row['student_id'],
+                'studentName'=> $name,
                 'course_code' => $row['course_code'],
                 'Test1' => $row['Test1'],
                 'Test2' => $row['Test2'],

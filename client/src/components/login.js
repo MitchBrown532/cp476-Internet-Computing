@@ -14,6 +14,7 @@ function Login({ setIsAuthenticated }) { // Accept setIsAuthenticated as a prop
 
     return (
         <div id="signInButton">
+            <h1>Student Database Managment System</h1>
             <GoogleLogin
                 clientId={clientId}
                 buttonText='Login'

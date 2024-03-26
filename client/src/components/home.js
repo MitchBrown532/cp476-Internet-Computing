@@ -12,7 +12,6 @@ function Home() {
         <div>
             <h2>Home Page</h2>
             <NavigationBar />
-            <h4>Click this:</h4>
             <Logout />
         </div>
     );

@@ -58,8 +58,6 @@ class studentModel {
         $sql->bind_param('s', $name);
         $sql->execute();
         
- 
-
         $response =  json_encode(([
             "message"=>"Student added",
             "id"=>$conn->insert_id
